@@ -1,0 +1,36 @@
+{
+  "name": "ffmpeg-transcoder-manager-backend",
+  "version": "1.0.0",
+  "description": "Backend API for FFmpeg Transcoder Manager",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "typeorm-ts-node-commonjs -d src/database/dataSource.ts migration:generate src/database/migrations/AutoMigration",
+    "migration:run": "typeorm-ts-node-commonjs -d src/database/dataSource.ts migration:run"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dbus-native": "^0.4.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.11.5",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.26",
+    "uuid": "^10.0.0",
+    "winston": "^3.13.0",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.5.10",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3"
+  }
+}
